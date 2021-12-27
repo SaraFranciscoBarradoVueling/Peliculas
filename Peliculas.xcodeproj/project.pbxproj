@@ -38,6 +38,11 @@
 		B13922C927798BB300B14C3A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922C727798BB300B14C3A /* SplashViewController.swift */; };
 		B13922CA27798BB300B14C3A /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13922C827798BB300B14C3A /* SplashViewController.xib */; };
 		B13922CD2779950900B14C3A /* SplashConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922CC2779950900B14C3A /* SplashConstants.swift */; };
+		B13922D027799FF500B14C3A /* ServiceConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922CF27799FF500B14C3A /* ServiceConfigurationProtocol.swift */; };
+		B13922D22779A00C00B14C3A /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922D12779A00C00B14C3A /* WebServices.swift */; };
+		B13922D42779A02D00B14C3A /* ServiceRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922D32779A02D00B14C3A /* ServiceRoutes.swift */; };
+		B13922D62779A06500B14C3A /* ServiceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922D52779A06500B14C3A /* ServiceMethods.swift */; };
+		B13922DB2779A0DB00B14C3A /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922DA2779A0DB00B14C3A /* Logs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +104,11 @@
 		B13922C727798BB300B14C3A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B13922C827798BB300B14C3A /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		B13922CC2779950900B14C3A /* SplashConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashConstants.swift; sourceTree = "<group>"; };
+		B13922CF27799FF500B14C3A /* ServiceConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfigurationProtocol.swift; sourceTree = "<group>"; };
+		B13922D12779A00C00B14C3A /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		B13922D32779A02D00B14C3A /* ServiceRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRoutes.swift; sourceTree = "<group>"; };
+		B13922D52779A06500B14C3A /* ServiceMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMethods.swift; sourceTree = "<group>"; };
+		B13922DA2779A0DB00B14C3A /* Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,8 +315,9 @@
 		B13922A32779234D00B14C3A /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				B13922A52779238100B14C3A /* VIPER */,
 				B13922A42779237700B14C3A /* Utils */,
+				B13922A52779238100B14C3A /* VIPER */,
+				B13922D92779A0BF00B14C3A /* Managers */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -314,6 +325,8 @@
 		B13922A42779237700B14C3A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B13922D72779A0A100B14C3A /* Extensions */,
+				B13922D82779A0AA00B14C3A /* Protocols */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -330,7 +343,11 @@
 		B13922AA2779251300B14C3A /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
+				B13922CE27799FDF00B14C3A /* Protocols */,
+				B13922D12779A00C00B14C3A /* WebServices.swift */,
 				B13922AB2779253400B14C3A /* ServiceError.swift */,
+				B13922D32779A02D00B14C3A /* ServiceRoutes.swift */,
+				B13922D52779A06500B14C3A /* ServiceMethods.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -430,6 +447,36 @@
 				B13922CC2779950900B14C3A /* SplashConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		B13922CE27799FDF00B14C3A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B13922CF27799FF500B14C3A /* ServiceConfigurationProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B13922D72779A0A100B14C3A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B13922D82779A0AA00B14C3A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B13922D92779A0BF00B14C3A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B13922DA2779A0DB00B14C3A /* Logs.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -673,7 +720,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B13922AC2779253400B14C3A /* ServiceError.swift in Sources */,
+				B13922D22779A00C00B14C3A /* WebServices.swift in Sources */,
 				B13922A2277922D200B14C3A /* MoviesListRouter.swift in Sources */,
+				B13922D027799FF500B14C3A /* ServiceConfigurationProtocol.swift in Sources */,
+				B13922DB2779A0DB00B14C3A /* Logs.swift in Sources */,
+				B13922D62779A06500B14C3A /* ServiceMethods.swift in Sources */,
 				B13922C327798B5700B14C3A /* SplashPresenter.swift in Sources */,
 				B139229427791F2600B14C3A /* MoviesListLocalDM.swift in Sources */,
 				B139229C2779218100B14C3A /* MoviesListInterfaces.swift in Sources */,
@@ -687,6 +738,7 @@
 				B139229227791ECA00B14C3A /* MoviesListExternalDM.swift in Sources */,
 				B13922A9277923B600B14C3A /* RouterInterface.swift in Sources */,
 				B13922B4277988F500B14C3A /* SplashExternalDM.swift in Sources */,
+				B13922D42779A02D00B14C3A /* ServiceRoutes.swift in Sources */,
 				B13922C027798AD100B14C3A /* SplashInteractor.swift in Sources */,
 				B13922B2277988E600B14C3A /* SplashLocalDM.swift in Sources */,
 				B13922BA277989CD00B14C3A /* SplashWireframe.swift in Sources */,
