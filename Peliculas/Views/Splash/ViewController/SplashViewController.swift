@@ -7,23 +7,32 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
-
+class SplashViewController: BaseViewController {
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var loadingImageView: UIImageView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    // MARK: - Variables
+    var presenter: SplashPresenterInterface?
+    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = true
+        presenter?.viewDidLoad()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: -IBActions
+    @IBAction func errorButtonAction(_ sender: Any) {
+        presenter?.viewDidLoad()
     }
-    */
-
+    
+    
+}
+// MARK: - View -
+extension SplashViewController: SplashViewInterface {
+    
 }
