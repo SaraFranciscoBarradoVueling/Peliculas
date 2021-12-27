@@ -8,6 +8,7 @@
 import Foundation
 
 internal protocol ServiceConfigurationProtocol {
+    var id: String { get }
     var path: String { get }
     var method: ServiceMethods { get }
     var request: URLRequest? { get }
