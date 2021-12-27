@@ -22,7 +22,7 @@ extension AppDelegate {
     private func setupRouter() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootNavigationController = UINavigationController()
-        let initialRouter = MoviesListRouter()
+        let initialRouter = SplashRouter()
         initialRouter.navigationController = rootNavigationController
         initialRouter.pushOnNavigationController(animation: false)
         window?.rootViewController = rootNavigationController
