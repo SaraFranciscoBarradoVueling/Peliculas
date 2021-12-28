@@ -20,9 +20,13 @@ extension ServiceRoutes: ServiceConfigurationProtocol {
         static let json: String = "application/json"
         static let URL_BASE: String = "https://api.themoviedb.org/3"
         static let API_KEY: String = "api_key=48d320f802be4b92c89f20bf3b11f7f7"
-        
+        //listado
         //https://api.themoviedb.org/3/search/movie?api_key=48d320f802be4b92c89f20bf3b11f7f7&query=el
+        //detalle
         //https://api.themoviedb.org/3/movie/<movie-id>?api_key=<APIKEY>
+        //base url de las imagenes
+        //https://api.themoviedb.org/3/configuration?api_key=<APIKEY>
+        // para la imagen llamas a configuration para conseguir base_url+file_size+file_path+poster_path(este ultimo se saca del listado)
     }
     
     // MARK: - Variables
@@ -30,7 +34,11 @@ extension ServiceRoutes: ServiceConfigurationProtocol {
     var path: String {
         switch self {
         case .getMovieList(let query):
-            return "/search/movie?\(Constants.API_KEY)&query=\(query)"
+            if let queryFormat = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+                return "/search/movie?\(Constants.API_KEY)&query=%22\(queryFormat.description)%22"
+            } else {
+                return ""
+            }
         case .getMovieDetail(let id):
             return "/movie/\(id)?\(Constants.API_KEY)"
         }

@@ -7,50 +7,46 @@
 
 import Foundation
 
-typealias Rates = [RateServiceResponse]
-
-internal struct Rate {
-    var from: String?
-    var to: String?
-    var rate: Double?
+internal struct MovieList {
+    var page: Int?
+    var results: [MovieListItem]?
+    var totalPages: Int?
+    var totalResults: Int?
     
-    init(from: String, to: String, rate: Double) {
-        self.from = from
-        self.to = to
-        self.rate = rate
+    init(page: Int,
+         results: [MovieListItem],
+         totalPages: Int,
+         totalResults: Int) {
+        self.page = page
+        self.results = results
+        self.totalPages = totalPages
+        self.totalResults = totalResults
     }
 }
 
-internal struct RateServiceResponse: Decodable {
-    let from: String?
-    let to: String?
-    let rate: String?
+internal struct MovieListServiceResponse: Decodable {
+    let page: Int?
+    let results: [MovieListItemServiceResponse]?
+    let totalPages: Int?
+    let totalResults: Int?
     
     enum CodingKeys: String, CodingKey {
-        case from
-        case to
-        case rate
+        case page
+        case results
+        case totalPages = "total_pages"
+        case totalResults = "total_results"
     }
+    
 }
 
-internal final class RateBinding {
+internal final class MovieListBinding {
     
-    static func bind(_ soaRates: [RateServiceResponse]) -> [Rate] {
-        var rates: [Rate] = []
-        soaRates.forEach {
-            rates.append(RateBinding.bind($0))
-        }
-        return rates
-    }
-    
-    static func bind(_ soaRate: RateServiceResponse) -> Rate {
-        var rate = Rate(from: "", to: "", rate: 0)
-        rate.from = soaRate.from
-        rate.to = soaRate.to
-        if let rateFloat = soaRate.rate {
-            rate.rate = Double.init(rateFloat)
-        }
-        
-        return rate
+    static func bind(_ soaMovieList: MovieListServiceResponse) -> MovieList {
+        var movieList = MovieList(page: 0, results: [], totalPages: 0, totalResults: 0)
+        movieList.page = soaMovieList.page
+        movieList.results = MovieListItemBinding.bind(soaMovieList.results ?? [])
+        movieList.totalPages = soaMovieList.totalPages
+        movieList.totalResults = soaMovieList.totalPages
+        return movieList
     }
 }

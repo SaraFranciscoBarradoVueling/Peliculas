@@ -30,21 +30,12 @@
 		B13922A72779239900B14C3A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922A62779239900B14C3A /* BaseViewController.swift */; };
 		B13922A9277923B600B14C3A /* RouterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922A8277923B600B14C3A /* RouterInterface.swift */; };
 		B13922AC2779253400B14C3A /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922AB2779253400B14C3A /* ServiceError.swift */; };
-		B13922B2277988E600B14C3A /* SplashLocalDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922B1277988E600B14C3A /* SplashLocalDM.swift */; };
-		B13922B4277988F500B14C3A /* SplashExternalDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922B3277988F500B14C3A /* SplashExternalDM.swift */; };
-		B13922B72779897200B14C3A /* SplashInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922B62779897200B14C3A /* SplashInterfaces.swift */; };
-		B13922BA277989CD00B14C3A /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922B9277989CD00B14C3A /* SplashWireframe.swift */; };
-		B13922BD27798A0700B14C3A /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922BC27798A0700B14C3A /* SplashRouter.swift */; };
-		B13922C027798AD100B14C3A /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922BF27798AD100B14C3A /* SplashInteractor.swift */; };
-		B13922C327798B5700B14C3A /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922C227798B5700B14C3A /* SplashPresenter.swift */; };
-		B13922C927798BB300B14C3A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922C727798BB300B14C3A /* SplashViewController.swift */; };
-		B13922CA27798BB300B14C3A /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13922C827798BB300B14C3A /* SplashViewController.xib */; };
-		B13922CD2779950900B14C3A /* SplashConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922CC2779950900B14C3A /* SplashConstants.swift */; };
 		B13922D027799FF500B14C3A /* ServiceConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922CF27799FF500B14C3A /* ServiceConfigurationProtocol.swift */; };
 		B13922D22779A00C00B14C3A /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922D12779A00C00B14C3A /* WebServices.swift */; };
 		B13922D42779A02D00B14C3A /* ServiceRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922D32779A02D00B14C3A /* ServiceRoutes.swift */; };
 		B13922D62779A06500B14C3A /* ServiceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922D52779A06500B14C3A /* ServiceMethods.swift */; };
 		B13922DB2779A0DB00B14C3A /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13922DA2779A0DB00B14C3A /* Logs.swift */; };
+		B144DF98277B9783008FBCC5 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144DF97277B9783008FBCC5 /* MovieListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,21 +89,12 @@
 		B13922A62779239900B14C3A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B13922A8277923B600B14C3A /* RouterInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterInterface.swift; sourceTree = "<group>"; };
 		B13922AB2779253400B14C3A /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
-		B13922B1277988E600B14C3A /* SplashLocalDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashLocalDM.swift; sourceTree = "<group>"; };
-		B13922B3277988F500B14C3A /* SplashExternalDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashExternalDM.swift; sourceTree = "<group>"; };
-		B13922B62779897200B14C3A /* SplashInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInterfaces.swift; sourceTree = "<group>"; };
-		B13922B9277989CD00B14C3A /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
-		B13922BC27798A0700B14C3A /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
-		B13922BF27798AD100B14C3A /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
-		B13922C227798B5700B14C3A /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
-		B13922C727798BB300B14C3A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		B13922C827798BB300B14C3A /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
-		B13922CC2779950900B14C3A /* SplashConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashConstants.swift; sourceTree = "<group>"; };
 		B13922CF27799FF500B14C3A /* ServiceConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfigurationProtocol.swift; sourceTree = "<group>"; };
 		B13922D12779A00C00B14C3A /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 		B13922D32779A02D00B14C3A /* ServiceRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRoutes.swift; sourceTree = "<group>"; };
 		B13922D52779A06500B14C3A /* ServiceMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMethods.swift; sourceTree = "<group>"; };
 		B13922DA2779A0DB00B14C3A /* Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		B144DF97277B9783008FBCC5 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				B1366BDC277AFDC600277E07 /* MovieList.swift */,
+				B144DF97277B9783008FBCC5 /* MovieListItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,7 +221,6 @@
 		B139228527791D8C00B14C3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B13922AD2779888200B14C3A /* Splash */,
 				B139228627791DCE00B14C3A /* MoviesList */,
 			);
 			path = Views;
@@ -372,103 +354,6 @@
 				B13922D52779A06500B14C3A /* ServiceMethods.swift */,
 			);
 			path = WebServices;
-			sourceTree = "<group>";
-		};
-		B13922AD2779888200B14C3A /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				B13922CB277994F600B14C3A /* Constants */,
-				B13922C427798B8000B14C3A /* ViewController */,
-				B13922C127798B4B00B14C3A /* Presenter */,
-				B13922BE27798AC000B14C3A /* Interactor */,
-				B13922BB277989F900B14C3A /* Router */,
-				B13922B8277989BE00B14C3A /* Wireframe */,
-				B13922B52779896100B14C3A /* Interfaces */,
-				B13922AE277988BA00B14C3A /* DataManagers */,
-			);
-			path = Splash;
-			sourceTree = "<group>";
-		};
-		B13922AE277988BA00B14C3A /* DataManagers */ = {
-			isa = PBXGroup;
-			children = (
-				B13922B0277988CC00B14C3A /* External */,
-				B13922AF277988C300B14C3A /* Local */,
-			);
-			path = DataManagers;
-			sourceTree = "<group>";
-		};
-		B13922AF277988C300B14C3A /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				B13922B1277988E600B14C3A /* SplashLocalDM.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		B13922B0277988CC00B14C3A /* External */ = {
-			isa = PBXGroup;
-			children = (
-				B13922B3277988F500B14C3A /* SplashExternalDM.swift */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		B13922B52779896100B14C3A /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				B13922B62779897200B14C3A /* SplashInterfaces.swift */,
-			);
-			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		B13922B8277989BE00B14C3A /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				B13922B9277989CD00B14C3A /* SplashWireframe.swift */,
-			);
-			path = Wireframe;
-			sourceTree = "<group>";
-		};
-		B13922BB277989F900B14C3A /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				B13922BC27798A0700B14C3A /* SplashRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B13922BE27798AC000B14C3A /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				B13922BF27798AD100B14C3A /* SplashInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B13922C127798B4B00B14C3A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				B13922C227798B5700B14C3A /* SplashPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		B13922C427798B8000B14C3A /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B13922C727798BB300B14C3A /* SplashViewController.swift */,
-				B13922C827798BB300B14C3A /* SplashViewController.xib */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		B13922CB277994F600B14C3A /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				B13922CC2779950900B14C3A /* SplashConstants.swift */,
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		B13922CE27799FDF00B14C3A /* Protocols */ = {
@@ -613,7 +498,6 @@
 				B139226227791D3F00B14C3A /* LaunchScreen.storyboard in Resources */,
 				B139225F27791D3F00B14C3A /* Assets.xcassets in Resources */,
 				B13922A02779227C00B14C3A /* MoviesListViewController.xib in Resources */,
-				B13922CA27798BB300B14C3A /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B144DF98277B9783008FBCC5 /* MovieListItem.swift in Sources */,
 				B13922AC2779253400B14C3A /* ServiceError.swift in Sources */,
 				B13922D22779A00C00B14C3A /* WebServices.swift in Sources */,
 				B13922A2277922D200B14C3A /* MoviesListRouter.swift in Sources */,
@@ -748,26 +633,17 @@
 				B13922DB2779A0DB00B14C3A /* Logs.swift in Sources */,
 				B13922D62779A06500B14C3A /* ServiceMethods.swift in Sources */,
 				B1366BDD277AFDC600277E07 /* MovieList.swift in Sources */,
-				B13922C327798B5700B14C3A /* SplashPresenter.swift in Sources */,
 				B139229427791F2600B14C3A /* MoviesListLocalDM.swift in Sources */,
 				B139229C2779218100B14C3A /* MoviesListInterfaces.swift in Sources */,
 				B139229A2779208400B14C3A /* MoviesListInteractor.swift in Sources */,
-				B13922CD2779950900B14C3A /* SplashConstants.swift in Sources */,
-				B13922B72779897200B14C3A /* SplashInterfaces.swift in Sources */,
 				B139229627791F8800B14C3A /* MoviesListWireframe.swift in Sources */,
 				B13922A72779239900B14C3A /* BaseViewController.swift in Sources */,
-				B13922BD27798A0700B14C3A /* SplashRouter.swift in Sources */,
 				B139229827791FE700B14C3A /* MoviesListPresenter.swift in Sources */,
 				B139229227791ECA00B14C3A /* MoviesListExternalDM.swift in Sources */,
 				B13922A9277923B600B14C3A /* RouterInterface.swift in Sources */,
-				B13922B4277988F500B14C3A /* SplashExternalDM.swift in Sources */,
 				B13922D42779A02D00B14C3A /* ServiceRoutes.swift in Sources */,
-				B13922C027798AD100B14C3A /* SplashInteractor.swift in Sources */,
-				B13922B2277988E600B14C3A /* SplashLocalDM.swift in Sources */,
-				B13922BA277989CD00B14C3A /* SplashWireframe.swift in Sources */,
 				B139225627791D3F00B14C3A /* AppDelegate.swift in Sources */,
 				B139229F2779227C00B14C3A /* MoviesListViewController.swift in Sources */,
-				B13922C927798BB300B14C3A /* SplashViewController.swift in Sources */,
 				B1366BDA277AF56A00277E07 /* MoviesListConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

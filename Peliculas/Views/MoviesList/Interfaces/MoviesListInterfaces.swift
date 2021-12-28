@@ -73,5 +73,6 @@ protocol MoviesListWireframeInterface {
     func noResultsLoading(searchText: String)
     func noResultsInitialState()
     func noResultsErrorView()
+    func noResultsView()
 }
 

@@ -49,6 +49,13 @@ extension MoviesListWireframe: MoviesListWireframeInterface {
         view.noResultsImageView.layer.removeAllAnimations()
     }
     
+    func noResultsView() {
+        view.noResultsView.isHidden = false
+        view.noResultsLabel.text = "Oops there is no results \nfor this search"
+        view.noResultsImageView.image = UIImage(named: "noResults")
+        view.noResultsImageView.layer.removeAllAnimations()
+    }
+    
     // MARK: - Private Methods
     private func setUpNavigationController() {
         view.navigationController?.navigationBar.isHidden = true
