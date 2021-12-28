@@ -10,6 +10,8 @@
 		7708F2C08C3320D4EFB242A0 /* Pods_PeliculasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133C9A3DA18F1DADD958E54A /* Pods_PeliculasTests.framework */; };
 		8EE2492B66E9F26D82B2614E /* Pods_Peliculas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B212D770B5C27C702FCFE7C /* Pods_Peliculas.framework */; };
 		96BAA4664A382214D003BE38 /* Pods_Peliculas_PeliculasUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F8E2B0FF9D7C18207A60D1 /* Pods_Peliculas_PeliculasUITests.framework */; };
+		B1366BDA277AF56A00277E07 /* MoviesListConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1366BD9277AF56A00277E07 /* MoviesListConstants.swift */; };
+		B1366BDD277AFDC600277E07 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1366BDC277AFDC600277E07 /* MovieList.swift */; };
 		B139225627791D3F00B14C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B139225527791D3F00B14C3A /* AppDelegate.swift */; };
 		B139225F27791D3F00B14C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B139225E27791D3F00B14C3A /* Assets.xcassets */; };
 		B139226227791D3F00B14C3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B139226027791D3F00B14C3A /* LaunchScreen.storyboard */; };
@@ -72,6 +74,8 @@
 		9B212D770B5C27C702FCFE7C /* Pods_Peliculas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Peliculas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CAE9E59EAC57E39979B910 /* Pods-PeliculasTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeliculasTests.debug.xcconfig"; path = "Target Support Files/Pods-PeliculasTests/Pods-PeliculasTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABCF444F38C97575852B8286 /* Pods-Peliculas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Peliculas.release.xcconfig"; path = "Target Support Files/Pods-Peliculas/Pods-Peliculas.release.xcconfig"; sourceTree = "<group>"; };
+		B1366BD9277AF56A00277E07 /* MoviesListConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListConstants.swift; sourceTree = "<group>"; };
+		B1366BDC277AFDC600277E07 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		B139225227791D3F00B14C3A /* Peliculas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peliculas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B139225527791D3F00B14C3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B139225E27791D3F00B14C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +166,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B1366BD8277AF55900277E07 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B1366BD9277AF56A00277E07 /* MoviesListConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B1366BDB277AFD9500277E07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1366BDC277AFDC600277E07 /* MovieList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B139224927791D3E00B14C3A = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +247,8 @@
 		B139228627791DCE00B14C3A /* MoviesList */ = {
 			isa = PBXGroup;
 			children = (
+				B1366BDB277AFD9500277E07 /* Models */,
+				B1366BD8277AF55900277E07 /* Constants */,
 				B139228827791E2600B14C3A /* DataManagers */,
 				B139228927791E3000B14C3A /* Wireframe */,
 				B139228A27791E3600B14C3A /* Presenter */,
@@ -725,6 +747,7 @@
 				B13922D027799FF500B14C3A /* ServiceConfigurationProtocol.swift in Sources */,
 				B13922DB2779A0DB00B14C3A /* Logs.swift in Sources */,
 				B13922D62779A06500B14C3A /* ServiceMethods.swift in Sources */,
+				B1366BDD277AFDC600277E07 /* MovieList.swift in Sources */,
 				B13922C327798B5700B14C3A /* SplashPresenter.swift in Sources */,
 				B139229427791F2600B14C3A /* MoviesListLocalDM.swift in Sources */,
 				B139229C2779218100B14C3A /* MoviesListInterfaces.swift in Sources */,
@@ -745,6 +768,7 @@
 				B139225627791D3F00B14C3A /* AppDelegate.swift in Sources */,
 				B139229F2779227C00B14C3A /* MoviesListViewController.swift in Sources */,
 				B13922C927798BB300B14C3A /* SplashViewController.swift in Sources */,
+				B1366BDA277AF56A00277E07 /* MoviesListConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,8 +938,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Peliculas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -930,6 +956,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sara.Peliculas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -942,8 +969,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Peliculas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -958,6 +987,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sara.Peliculas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

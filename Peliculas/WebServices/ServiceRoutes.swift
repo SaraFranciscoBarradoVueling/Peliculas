@@ -8,8 +8,8 @@
 import Foundation
 
 internal enum ServiceRoutes {
-    case getMovieList
-    case getMovieDetail
+    case getMovieList(query: String)
+    case getMovieDetail(id:Int)
 }
 extension ServiceRoutes: ServiceConfigurationProtocol {
     
@@ -26,16 +26,13 @@ extension ServiceRoutes: ServiceConfigurationProtocol {
     }
     
     // MARK: - Variables
-    var id: String {
-        return ""
-    }
-    
+
     var path: String {
         switch self {
-        case .getMovieList:
-            return "/search/movie?"
-        case .getMovieDetail:
-            return "/movie/\(id)?"
+        case .getMovieList(let query):
+            return "/search/movie?\(Constants.API_KEY)&query=\(query)"
+        case .getMovieDetail(let id):
+            return "/movie/\(id)?\(Constants.API_KEY)"
         }
     }
     
@@ -54,7 +51,7 @@ extension ServiceRoutes: ServiceConfigurationProtocol {
     
     // MARK: - Request
     var request: URLRequest? {
-        guard let url = URL(string: "\(Constants.URL_BASE)\(path)\(Constants.API_KEY)") else { return nil }
+        guard let url = URL(string: "\(Constants.URL_BASE)\(path)") else { return nil }
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue

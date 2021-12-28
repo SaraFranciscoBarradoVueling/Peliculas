@@ -21,29 +21,34 @@ protocol MoviesListPresenterInterface {
     var router: MoviesListRouterInterface? { get }
     // ViewController -> Presenter
     func viewDidLoad()
+    func noResultsLoading(searchText: String)
+    func getData(searchText: String)
 }
 
 // MARK: - Interactor
 protocol MoviesListInteractorInterface {
     var presenter: MoviesListOutputInteractorInterface? { get set }
     // Presenter -> Interactor
+    func getData(searchText: String)
 }
 
 protocol MoviesListOutputInteractorInterface  {
     // Interactor -> Presenter
-
-    
+    func success()
+    func failure()
 }
 
 // MARK: - ExternalDM
 protocol MoviesListExternalInputDMInterface {
     var interactor: MoviesListExternalOutputDMInterface? { get set }
     // Interactor -> External Data Manager
+    func getData(searchText: String)
 }
 
 protocol MoviesListExternalOutputDMInterface: class {
     // External Data Manager -> Interactor
-
+    func success()
+    func failure()
 }
 
 // MARK: - LocalDM
@@ -64,5 +69,9 @@ protocol MoviesListRouterInterface: RouterInterface {
 // MARK: - Wireframe
 protocol MoviesListWireframeInterface {
     // Presenter -> Wireframe
+    func setUpViews()
+    func noResultsLoading(searchText: String)
+    func noResultsInitialState()
+    func noResultsErrorView()
 }
 

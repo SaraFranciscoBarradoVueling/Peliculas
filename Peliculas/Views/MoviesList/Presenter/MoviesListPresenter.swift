@@ -29,10 +29,22 @@ internal final class MoviesListPresenter {
 
 // MARK: - Presenter -
 extension MoviesListPresenter: MoviesListPresenterInterface {
-    
+
     // MARK: - Internal Methods
     func viewDidLoad(){
-        
+        wireframe?.setUpViews()
+    }
+    
+    func noResultsLoading(searchText: String) {
+        wireframe?.noResultsLoading(searchText: searchText)
+    }
+    
+    func noResultsInitialState() {
+        wireframe?.noResultsInitialState()
+    }
+    
+    func getData(searchText: String) {
+        interactor?.getData(searchText: searchText)
     }
     
     // MARK: - Private Methods
@@ -40,6 +52,16 @@ extension MoviesListPresenter: MoviesListPresenterInterface {
 }
 // MARK: - Interactor -
 extension MoviesListPresenter: MoviesListOutputInteractorInterface {
+    func success() {
+        // exito en la llamda a la lista de peliculas
+        // si el resultado es vacío muestras el empty state
+        // si tienes datos recargas la tabla
+    }
+    
+    func failure() {
+        wireframe?.noResultsErrorView()
+    }
+    
     
     // MARK: - Internal Methods
 

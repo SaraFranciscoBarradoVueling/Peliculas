@@ -23,5 +23,19 @@ internal final class MoviesListExternalDM {
 extension MoviesListExternalDM: MoviesListExternalInputDMInterface {
     
     // MARK: - Internal Methods
+    func getData(searchText: String) {
+        WebService.request(route: .getMovieList(query: searchText),
+                           responseModel: Rates.self) { (result) in
+            switch result {
+                
+            case .success(_):
+                self.interactor?.success()
+            case .failure(_):
+                self.interactor?.failure()
+            }
+        }
+    }
+    
+
 
 }
