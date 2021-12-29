@@ -34,12 +34,15 @@ extension DetailWireframe: DetailWireframeInterface {
     }
     
     private func setUpViewsInitialState() {
-        view.titleLabel.textColor = UIColor.white
+        view.titleLabel.textColor = UIColor.black
         view.titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        view.votesLabel.textColor = UIColor.white
-        view.votesLabel.font = UIFont.boldSystemFont(ofSize: 12)
-        view.descLabel.textColor = UIColor.white
-        view.descLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        view.votesLabel.textColor = UIColor.black
+        view.votesLabel.backgroundColor = UIColor.white
+        view.votesLabel.layer.masksToBounds = true
+        view.votesLabel.layer.cornerRadius = view.votesLabel.frame.size.height/2.0
+        view.votesLabel.font = UIFont.boldSystemFont(ofSize: 40)
+        view.descLabel.textColor = UIColor.black
+        view.descLabel.font = UIFont.italicSystemFont(ofSize: 12)
     }
 }
 

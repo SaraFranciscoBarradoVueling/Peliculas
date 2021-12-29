@@ -16,7 +16,8 @@ class MovieCell: UITableViewCell, ReusableCell, NibLoadableView {
     @IBOutlet weak var votesLabel: UILabel!
     @IBOutlet weak var img: UIImageView!
 
-    @IBOutlet weak var verticalStack: UIStackView!
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         initViews()
@@ -32,14 +33,16 @@ class MovieCell: UITableViewCell, ReusableCell, NibLoadableView {
     
     // MARK: - Internal Methods -
     private func initViews() {
-        descLabel.textColor = UIColor.white
+        descLabel.textColor = UIColor.black
         descLabel.font = UIFont.italicSystemFont(ofSize: 12)
         title.textColor = UIColor.black
         title.font = UIFont.boldSystemFont(ofSize: 20)
         votesLabel.textColor = UIColor.black
         votesLabel.font = UIFont.systemFont(ofSize: 30)
+        votesLabel.layer.masksToBounds = true
+        votesLabel.layer.cornerRadius = 10
         img.layer.cornerRadius = 10
-        verticalStack.layer.cornerRadius = 10.0
+        containerView.layer.cornerRadius = 10.0        
     }
     
 }
