@@ -20,6 +20,13 @@ internal final class MoviesListInteractor {
 extension MoviesListInteractor: MoviesListInteractorInterface {
 
     // MARK: - Internal Methods
+    func getData(searchText: String) {
+        externalDM?.getData(searchText: searchText)
+    }
+    
+    func getImagesaseUrl() {
+        externalDM?.getImagesaseUrl()
+    }
     
     // MARK: - Private Methods
     
@@ -36,6 +43,15 @@ extension MoviesListInteractor: MoviesListLocalOutputDMInterface {
 
 // MARK: - ExternalDM -
 extension MoviesListInteractor: MoviesListExternalOutputDMInterface {
+    func success(response: MovieListServiceResponse, imageUrl: String) {
+        let data = MovieListBinding.bind(response)
+        presenter?.success(response: data, imageUrl: imageUrl)
+    }
+    
+    func failure() {
+        presenter?.failure()
+    }
+    
     // MARK: - Internal Methods
 
     // MARK: - Private Methods
