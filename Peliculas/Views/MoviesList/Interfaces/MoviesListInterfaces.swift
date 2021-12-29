@@ -42,7 +42,7 @@ protocol MoviesListInteractorInterface {
 protocol MoviesListOutputInteractorInterface  {
     // Interactor -> Presenter
     func success(response: MovieList, imageUrl: String)
-    func failure()
+    func failure(error: ServiceError)
 }
 
 // MARK: - ExternalDM
@@ -56,7 +56,7 @@ protocol MoviesListExternalInputDMInterface {
 protocol MoviesListExternalOutputDMInterface: class {
     // External Data Manager -> Interactor
     func success(response: MovieListServiceResponse, imageUrl: String)
-    func failure()
+    func failure(error: ServiceError)
 }
 
 // MARK: - LocalDM

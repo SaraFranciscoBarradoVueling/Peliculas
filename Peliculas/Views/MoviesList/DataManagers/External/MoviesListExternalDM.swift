@@ -30,8 +30,8 @@ extension MoviesListExternalDM: MoviesListExternalInputDMInterface {
             switch result {
             case .success(let response):
                 self.interactor?.success(response: response, imageUrl: self.baseUrl)
-            case .failure(_):
-                self.interactor?.failure()
+            case .failure(let error):
+                self.interactor?.failure(error: error)
             }
         }
     }

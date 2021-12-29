@@ -76,7 +76,8 @@ extension MoviesListPresenter: MoviesListOutputInteractorInterface {
         }
     }
     
-    func failure() {
+    func failure(error: ServiceError) {
+        view?.showError(error: error)
         wireframe?.noResultsErrorView()
     }
     

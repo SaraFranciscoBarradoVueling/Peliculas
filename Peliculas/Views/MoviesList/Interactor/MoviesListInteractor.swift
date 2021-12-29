@@ -48,8 +48,8 @@ extension MoviesListInteractor: MoviesListExternalOutputDMInterface {
         presenter?.success(response: data, imageUrl: imageUrl)
     }
     
-    func failure() {
-        presenter?.failure()
+    func failure(error: ServiceError) {
+        presenter?.failure(error: error)
     }
     
     // MARK: - Internal Methods
