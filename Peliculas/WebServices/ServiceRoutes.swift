@@ -10,6 +10,7 @@ import Foundation
 internal enum ServiceRoutes {
     case getMovieList(query: String)
     case getMovieDetail(id:Int)
+    case getImagesBaseUrl
 }
 extension ServiceRoutes: ServiceConfigurationProtocol {
     
@@ -23,9 +24,9 @@ extension ServiceRoutes: ServiceConfigurationProtocol {
         //listado
         //https://api.themoviedb.org/3/search/movie?api_key=48d320f802be4b92c89f20bf3b11f7f7&query=el
         //detalle
-        //https://api.themoviedb.org/3/movie/<movie-id>?api_key=<APIKEY>
+        //https://api.themoviedb.org/3/movie/1362?api_key=48d320f802be4b92c89f20bf3b11f7f7
         //base url de las imagenes
-        //https://api.themoviedb.org/3/configuration?api_key=<APIKEY>
+        //https://api.themoviedb.org/3/configuration?api_key=48d320f802be4b92c89f20bf3b11f7f7
         // para la imagen llamas a configuration para conseguir base_url+file_size+file_path+poster_path(este ultimo se saca del listado)
     }
     
@@ -33,6 +34,8 @@ extension ServiceRoutes: ServiceConfigurationProtocol {
 
     var path: String {
         switch self {
+        case .getImagesBaseUrl:
+            return "/configuration?\(Constants.API_KEY)"
         case .getMovieList(let query):
             if let queryFormat = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
                 return "/search/movie?\(Constants.API_KEY)&query=%22\(queryFormat.description)%22"

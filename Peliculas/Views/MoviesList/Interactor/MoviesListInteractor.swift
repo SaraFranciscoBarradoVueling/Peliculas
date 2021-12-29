@@ -24,6 +24,10 @@ extension MoviesListInteractor: MoviesListInteractorInterface {
         externalDM?.getData(searchText: searchText)
     }
     
+    func getImagesaseUrl() {
+        externalDM?.getImagesaseUrl()
+    }
+    
     // MARK: - Private Methods
     
 }
@@ -39,8 +43,9 @@ extension MoviesListInteractor: MoviesListLocalOutputDMInterface {
 
 // MARK: - ExternalDM -
 extension MoviesListInteractor: MoviesListExternalOutputDMInterface {
-    func success() {
-        presenter?.success()
+    func success(response: MovieListServiceResponse, imageUrl: String) {
+        let data = MovieListBinding.bind(response)
+        presenter?.success(response: data, imageUrl: imageUrl)
     }
     
     func failure() {

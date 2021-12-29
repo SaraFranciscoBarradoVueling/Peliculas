@@ -58,7 +58,7 @@ extension MoviesListWireframe: MoviesListWireframeInterface {
     
     // MARK: - Private Methods
     private func setUpNavigationController() {
-        view.navigationController?.navigationBar.isHidden = true
+        view.navigationController?.navigationBar.isHidden = false
     }
 
     private func setUpSearchController() {

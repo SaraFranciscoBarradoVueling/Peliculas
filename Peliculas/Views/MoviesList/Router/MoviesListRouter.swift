@@ -32,6 +32,13 @@ internal final class MoviesListRouter {
 
 // MARK: - Router -
 extension MoviesListRouter: MoviesListRouterInterface {
+    func navitageToDetail(selectedItem: MovieItem) {
+        let detailRouter = DetailRouter()
+        detailRouter.item = selectedItem
+        detailRouter.navigationController = navigationController
+        detailRouter.pushOnNavigationController(animation: false)
+    }
+    
     
     // MARK: - Internal Methods
 
