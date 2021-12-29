@@ -29,10 +29,30 @@ internal final class MoviesListPresenter {
 
 // MARK: - Presenter -
 extension MoviesListPresenter: MoviesListPresenterInterface {
-    
+
     // MARK: - Internal Methods
     func viewDidLoad(){
-        
+        wireframe?.setUpViews()
+    }
+    
+    func noResultsLoading(searchText: String) {
+        wireframe?.noResultsLoading(searchText: searchText)
+    }
+    
+    func noResultsInitialState() {
+        wireframe?.noResultsInitialState()
+    }
+    
+    func getData(searchText: String) {
+        interactor?.getData(searchText: searchText)
+    }
+    
+    func getImagesaseUrl() {
+        interactor?.getImagesaseUrl()
+    }
+    
+    func navitageToDetail(selectedItem: MovieItem) {
+        router?.navitageToDetail(selectedItem: selectedItem)
     }
     
     // MARK: - Private Methods
@@ -40,9 +60,37 @@ extension MoviesListPresenter: MoviesListPresenterInterface {
 }
 // MARK: - Interactor -
 extension MoviesListPresenter: MoviesListOutputInteractorInterface {
+    func success(response: MovieList, imageUrl: String) {
+        if let resultsSave = response.results {
+            if !resultsSave.isEmpty {
+                view?.loadData(movies: getItems(movieList: resultsSave, imageUrl: imageUrl))
+            } else {
+                wireframe?.noResultsView()
+            }
+        } else {
+            wireframe?.noResultsView()
+        }
+    }
+    
+    func failure() {
+        wireframe?.noResultsErrorView()
+    }
     
     // MARK: - Internal Methods
 
     // MARK: - Private Methods
+    private func getItems(movieList: [MovieListItem], imageUrl: String) -> [MovieItem] {
+        var items: [MovieItem] = []
+        movieList.forEach { movie in
+            let url = URL(string: imageUrl + movie.posterPath)
+            let data = try? Data(contentsOf: url!)
+            items.append(MovieItem(image: UIImage(data: data!),
+                                   title: movie.title,
+                                   description: movie.overview,
+                                   voteAverage: NSNumber(value: movie.voteAverage ?? 0.0).stringValue ,
+                                   id: movie.id))
+        }
+        return items
+    }
     
 }

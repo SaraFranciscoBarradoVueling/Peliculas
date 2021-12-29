@@ -11,6 +11,7 @@ import Foundation
 protocol MoviesListViewInterface: BaseViewController {
     var presenter: MoviesListPresenterInterface? { get set }
     // Presenter -> ViewController
+    func loadData(movies: [MovieItem])
 }
 
 // MARK: - Presenter
@@ -21,29 +22,40 @@ protocol MoviesListPresenterInterface {
     var router: MoviesListRouterInterface? { get }
     // ViewController -> Presenter
     func viewDidLoad()
+    func noResultsLoading(searchText: String)
+    func noResultsInitialState()
+    func getData(searchText: String)
+    func getImagesaseUrl()
+    func navitageToDetail(selectedItem: MovieItem)
+    
 }
 
 // MARK: - Interactor
 protocol MoviesListInteractorInterface {
     var presenter: MoviesListOutputInteractorInterface? { get set }
     // Presenter -> Interactor
+    func getData(searchText: String)
+    func getImagesaseUrl()
 }
 
 protocol MoviesListOutputInteractorInterface  {
     // Interactor -> Presenter
-
-    
+    func success(response: MovieList, imageUrl: String)
+    func failure()
 }
 
 // MARK: - ExternalDM
 protocol MoviesListExternalInputDMInterface {
     var interactor: MoviesListExternalOutputDMInterface? { get set }
     // Interactor -> External Data Manager
+    func getData(searchText: String)
+    func getImagesaseUrl()
 }
 
 protocol MoviesListExternalOutputDMInterface: class {
     // External Data Manager -> Interactor
-
+    func success(response: MovieListServiceResponse, imageUrl: String)
+    func failure()
 }
 
 // MARK: - LocalDM
@@ -59,10 +71,16 @@ protocol MoviesListLocalOutputDMInterface: class {
 // MARK: - Router
 protocol MoviesListRouterInterface: RouterInterface {
     // Presenter -> Router
+    func navitageToDetail(selectedItem: MovieItem)
 }
 
 // MARK: - Wireframe
 protocol MoviesListWireframeInterface {
     // Presenter -> Wireframe
+    func setUpViews()
+    func noResultsLoading(searchText: String)
+    func noResultsInitialState()
+    func noResultsErrorView()
+    func noResultsView()
 }
 
