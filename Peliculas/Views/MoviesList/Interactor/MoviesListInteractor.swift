@@ -24,8 +24,8 @@ extension MoviesListInteractor: MoviesListInteractorInterface {
         externalDM?.getData(searchText: searchText)
     }
     
-    func getImagesaseUrl() {
-        externalDM?.getImagesaseUrl()
+    func getImagesBaseUrl() {
+        externalDM?.getImagesBaseUrl()
     }
     
     // MARK: - Private Methods

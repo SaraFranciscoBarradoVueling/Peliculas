@@ -35,6 +35,10 @@ extension MoviesListPresenter: MoviesListPresenterInterface {
         wireframe?.setUpViews()
     }
     
+    func noResultsViewHidden(hidden: Bool) {
+        wireframe?.noResultsViewHidden(hidden: hidden)
+    }
+    
     func noResultsLoading(searchText: String) {
         wireframe?.noResultsLoading(searchText: searchText)
     }
@@ -48,7 +52,7 @@ extension MoviesListPresenter: MoviesListPresenterInterface {
     }
     
     func getImagesaseUrl() {
-        interactor?.getImagesaseUrl()
+        interactor?.getImagesBaseUrl()
     }
     
     func navitageToDetail(selectedItem: MovieItem) {

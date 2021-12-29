@@ -27,6 +27,7 @@ protocol MoviesListPresenterInterface {
     func getData(searchText: String)
     func getImagesaseUrl()
     func navitageToDetail(selectedItem: MovieItem)
+    func noResultsViewHidden(hidden: Bool)
     
 }
 
@@ -35,7 +36,7 @@ protocol MoviesListInteractorInterface {
     var presenter: MoviesListOutputInteractorInterface? { get set }
     // Presenter -> Interactor
     func getData(searchText: String)
-    func getImagesaseUrl()
+    func getImagesBaseUrl()
 }
 
 protocol MoviesListOutputInteractorInterface  {
@@ -49,7 +50,7 @@ protocol MoviesListExternalInputDMInterface {
     var interactor: MoviesListExternalOutputDMInterface? { get set }
     // Interactor -> External Data Manager
     func getData(searchText: String)
-    func getImagesaseUrl()
+    func getImagesBaseUrl()
 }
 
 protocol MoviesListExternalOutputDMInterface: class {
@@ -82,5 +83,6 @@ protocol MoviesListWireframeInterface {
     func noResultsInitialState()
     func noResultsErrorView()
     func noResultsView()
+    func noResultsViewHidden(hidden: Bool)
 }
 

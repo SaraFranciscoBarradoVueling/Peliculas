@@ -36,7 +36,7 @@ extension MoviesListExternalDM: MoviesListExternalInputDMInterface {
         }
     }
     
-    func getImagesaseUrl() {
+    func getImagesBaseUrl() {
         WebService.request(route: .getImagesBaseUrl,
                            responseModel: ImagesBaseUrlServiceResponse.self) { (result) in
             switch result {

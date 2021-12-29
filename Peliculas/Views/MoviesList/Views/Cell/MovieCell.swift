@@ -37,7 +37,7 @@ class MovieCell: UITableViewCell, ReusableCell, NibLoadableView {
         title.textColor = UIColor.black
         title.font = UIFont.boldSystemFont(ofSize: 20)
         votesLabel.textColor = UIColor.black
-        votesLabel.font = UIFont.systemFont(ofSize: 12)
+        votesLabel.font = UIFont.systemFont(ofSize: 30)
         img.layer.cornerRadius = 10
         verticalStack.layer.cornerRadius = 10.0
     }

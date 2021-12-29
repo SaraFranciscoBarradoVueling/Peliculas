@@ -27,6 +27,9 @@ extension MoviesListWireframe: MoviesListWireframeInterface {
         setUpSearchController()
         noResultsInitialState()
     }
+    func noResultsViewHidden(hidden: Bool) {
+        view.noResultsView.isHidden = hidden
+    }
 
     func noResultsLoading(searchText: String) {
         view.noResultsView.isHidden = false
@@ -59,6 +62,7 @@ extension MoviesListWireframe: MoviesListWireframeInterface {
     // MARK: - Private Methods
     private func setUpNavigationController() {
         view.navigationController?.navigationBar.isHidden = false
+        view.navigationItem.title = "Peliculas"
     }
 
     private func setUpSearchController() {

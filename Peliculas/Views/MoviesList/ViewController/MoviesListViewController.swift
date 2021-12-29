@@ -43,6 +43,7 @@ extension MoviesListViewController: MoviesListViewInterface {
     
     func loadData(movies: [MovieItem]) {
         self.cells = movies
+        presenter?.noResultsViewHidden(hidden: true)
         noResultsView.isHidden = true
         tableView.reloadData()
     }
@@ -80,6 +81,7 @@ extension MoviesListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("searchText",searchText)
         keyWordSearchText = searchText
+        presenter?.noResultsViewHidden(hidden: true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
