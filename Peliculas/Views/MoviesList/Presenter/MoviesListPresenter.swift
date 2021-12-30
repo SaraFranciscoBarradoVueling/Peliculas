@@ -89,13 +89,16 @@ extension MoviesListPresenter: MoviesListOutputInteractorInterface {
         movieList.forEach { movie in
             let url = URL(string: imageUrl + movie.posterPath)
             let data = try? Data(contentsOf: url!)
-            items.append(MovieItem(image: UIImage(data: data!),
-                                   title: movie.title,
-                                   description: movie.overview,
-                                   voteAverage: NSNumber(value: movie.voteAverage ?? 0.0).stringValue ,
-                                   id: movie.id))
+            if let vote = movie.voteAverage {
+                items.append(MovieItem(image: UIImage(data: data!),
+                                       title: movie.title,
+                                       description: movie.overview,
+                                       voteAverage: String(format: "%.1f", vote),
+                                       id: movie.id))
+            }
         }
         return items
     }
     
 }
+// NSNumber(value: movie.voteAverage. ?? 0.0).stringValue

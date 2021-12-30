@@ -23,6 +23,7 @@ extension MoviesListWireframe: MoviesListWireframeInterface {
 
     // MARK: - Public Methods
     func setUpViews() {
+        view.definesPresentationContext = true
         setUpNavigationController()
         setUpSearchController()
         noResultsInitialState()

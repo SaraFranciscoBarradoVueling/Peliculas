@@ -40,7 +40,7 @@ class MovieCell: UITableViewCell, ReusableCell, NibLoadableView {
         votesLabel.textColor = UIColor.black
         votesLabel.font = UIFont.systemFont(ofSize: 30)
         votesLabel.layer.masksToBounds = true
-        votesLabel.layer.cornerRadius = 10
+        votesLabel.layer.cornerRadius = votesLabel.frame.size.height / 2
         img.layer.cornerRadius = 10
         containerView.layer.cornerRadius = 10.0        
     }

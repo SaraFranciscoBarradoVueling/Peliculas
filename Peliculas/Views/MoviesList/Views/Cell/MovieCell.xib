@@ -20,7 +20,8 @@
                         <rect key="frame" x="20" y="20" width="446" height="214"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpV-2q-csT">
-                                <rect key="frame" x="10" y="10" width="82" height="82"/>
+                                <rect key="frame" x="10" y="5" width="82" height="82"/>
+                                <color key="backgroundColor" red="0.62990245810000001" green="0.84652581490000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="KKR-uJ-R6y"/>
                                     <constraint firstAttribute="width" constant="82" id="Oo7-vJ-ChN"/>
@@ -30,20 +31,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKV-Nm-Ev6">
-                                <rect key="frame" x="102" y="41" width="334" height="20.5"/>
+                                <rect key="frame" x="102" y="36" width="334" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anErrorOcurred" translatesAutoresizingMaskIntoConstraints="NO" id="dwH-BK-gbv">
-                                <rect key="frame" x="10" y="92" width="80" height="112"/>
+                                <rect key="frame" x="10" y="97" width="80" height="112"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="kkg-GO-Rvo"/>
                                     <constraint firstAttribute="height" constant="112" id="mao-sc-a2B"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="_Description" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHa-To-2XK">
-                                <rect key="frame" x="102" y="61.5" width="334" height="143.5"/>
+                                <rect key="frame" x="102" y="56.5" width="334" height="148.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,18 +52,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.94505399469999996" blue="0.96166616680000006" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dwH-BK-gbv" firstAttribute="top" secondItem="GpV-2q-csT" secondAttribute="bottom" constant="10" id="CwG-yb-Tkl"/>
                             <constraint firstAttribute="trailing" secondItem="fHa-To-2XK" secondAttribute="trailing" constant="10" id="P93-uw-7rM"/>
                             <constraint firstItem="dwH-BK-gbv" firstAttribute="leading" secondItem="nSc-bw-VC4" secondAttribute="leading" constant="10" id="QIF-AD-7ZN"/>
                             <constraint firstItem="GpV-2q-csT" firstAttribute="leading" secondItem="nSc-bw-VC4" secondAttribute="leading" constant="10" id="RBJ-uJ-RnT"/>
                             <constraint firstItem="fHa-To-2XK" firstAttribute="top" secondItem="jKV-Nm-Ev6" secondAttribute="bottom" id="Zhp-2k-G7h"/>
+                            <constraint firstItem="GpV-2q-csT" firstAttribute="top" secondItem="nSc-bw-VC4" secondAttribute="top" constant="5" id="daK-Ux-ay0"/>
                             <constraint firstAttribute="bottom" secondItem="fHa-To-2XK" secondAttribute="bottom" constant="9" id="gzc-uR-52F"/>
                             <constraint firstItem="jKV-Nm-Ev6" firstAttribute="leading" secondItem="GpV-2q-csT" secondAttribute="trailing" constant="10" id="kwM-Fe-1fd"/>
                             <constraint firstItem="fHa-To-2XK" firstAttribute="leading" secondItem="GpV-2q-csT" secondAttribute="trailing" constant="10" id="p03-f2-SxD"/>
                             <constraint firstAttribute="trailing" secondItem="jKV-Nm-Ev6" secondAttribute="trailing" constant="10" id="qvR-fZ-9RB"/>
-                            <constraint firstAttribute="bottom" secondItem="dwH-BK-gbv" secondAttribute="bottom" constant="10" id="su3-ZH-1z4"/>
+                            <constraint firstAttribute="bottom" secondItem="dwH-BK-gbv" secondAttribute="bottom" constant="5" id="su3-ZH-1z4"/>
                             <constraint firstItem="jKV-Nm-Ev6" firstAttribute="centerY" secondItem="GpV-2q-csT" secondAttribute="centerY" id="vnz-Vn-4aA"/>
-                            <constraint firstItem="GpV-2q-csT" firstAttribute="top" secondItem="nSc-bw-VC4" secondAttribute="top" constant="10" id="zeJ-si-9Ci"/>
-                            <constraint firstItem="dwH-BK-gbv" firstAttribute="top" secondItem="GpV-2q-csT" secondAttribute="bottom" id="zlj-dM-LQ9"/>
                         </constraints>
                     </view>
                 </subviews>
