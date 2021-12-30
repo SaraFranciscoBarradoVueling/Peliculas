@@ -33,10 +33,14 @@ internal final class MoviesListRouter {
 // MARK: - Router -
 extension MoviesListRouter: MoviesListRouterInterface {
     func navitageToDetail(selectedItem: MovieItem) {
-        let detailRouter = DetailRouter()
-        detailRouter.item = selectedItem
-        detailRouter.navigationController = navigationController
-        detailRouter.pushOnNavigationController(animation: false)
+        if let vc = viewController {
+            let detailRouter = DetailRouter()
+            detailRouter.item = selectedItem
+            detailRouter.presentFromViewController(vc,
+                                                   animated: true,
+                                                   presentation: .formSheet,
+                                                   modalTransitionStyle: .coverVertical)
+        }
     }
     
     
