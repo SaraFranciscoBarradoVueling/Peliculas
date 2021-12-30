@@ -30,13 +30,13 @@ extension MoviesListExternalDM: MoviesListExternalInputDMInterface {
             switch result {
             case .success(let response):
                 self.interactor?.success(response: response, imageUrl: self.baseUrl)
-            case .failure(_):
-                self.interactor?.failure()
+            case .failure(let error):
+                self.interactor?.failure(error: error)
             }
         }
     }
     
-    func getImagesaseUrl() {
+    func getImagesBaseUrl() {
         WebService.request(route: .getImagesBaseUrl,
                            responseModel: ImagesBaseUrlServiceResponse.self) { (result) in
             switch result {

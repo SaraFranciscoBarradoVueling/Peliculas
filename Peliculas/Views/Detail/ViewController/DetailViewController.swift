@@ -24,7 +24,6 @@ class DetailViewController: BaseViewController {
         presenter?.viewDidLoad()
         data = presenter?.getItem()
         loadData()
-        // Do any additional setup after loading the view.
     }
     
     private func loadData() {

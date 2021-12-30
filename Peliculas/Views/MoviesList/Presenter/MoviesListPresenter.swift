@@ -35,6 +35,10 @@ extension MoviesListPresenter: MoviesListPresenterInterface {
         wireframe?.setUpViews()
     }
     
+    func noResultsViewHidden(hidden: Bool) {
+        wireframe?.noResultsViewHidden(hidden: hidden)
+    }
+    
     func noResultsLoading(searchText: String) {
         wireframe?.noResultsLoading(searchText: searchText)
     }
@@ -48,7 +52,7 @@ extension MoviesListPresenter: MoviesListPresenterInterface {
     }
     
     func getImagesaseUrl() {
-        interactor?.getImagesaseUrl()
+        interactor?.getImagesBaseUrl()
     }
     
     func navitageToDetail(selectedItem: MovieItem) {
@@ -72,7 +76,8 @@ extension MoviesListPresenter: MoviesListOutputInteractorInterface {
         }
     }
     
-    func failure() {
+    func failure(error: ServiceError) {
+        view?.showError(error: error)
         wireframe?.noResultsErrorView()
     }
     
@@ -84,13 +89,16 @@ extension MoviesListPresenter: MoviesListOutputInteractorInterface {
         movieList.forEach { movie in
             let url = URL(string: imageUrl + movie.posterPath)
             let data = try? Data(contentsOf: url!)
-            items.append(MovieItem(image: UIImage(data: data!),
-                                   title: movie.title,
-                                   description: movie.overview,
-                                   voteAverage: NSNumber(value: movie.voteAverage ?? 0.0).stringValue ,
-                                   id: movie.id))
+            if let vote = movie.voteAverage {
+                items.append(MovieItem(image: UIImage(data: data!),
+                                       title: movie.title,
+                                       description: movie.overview,
+                                       voteAverage: String(format: "%.1f", vote),
+                                       id: movie.id))
+            }
         }
         return items
     }
     
 }
+// NSNumber(value: movie.voteAverage. ?? 0.0).stringValue

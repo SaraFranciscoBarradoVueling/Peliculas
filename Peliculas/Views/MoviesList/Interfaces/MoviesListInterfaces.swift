@@ -27,6 +27,7 @@ protocol MoviesListPresenterInterface {
     func getData(searchText: String)
     func getImagesaseUrl()
     func navitageToDetail(selectedItem: MovieItem)
+    func noResultsViewHidden(hidden: Bool)
     
 }
 
@@ -35,13 +36,13 @@ protocol MoviesListInteractorInterface {
     var presenter: MoviesListOutputInteractorInterface? { get set }
     // Presenter -> Interactor
     func getData(searchText: String)
-    func getImagesaseUrl()
+    func getImagesBaseUrl()
 }
 
 protocol MoviesListOutputInteractorInterface  {
     // Interactor -> Presenter
     func success(response: MovieList, imageUrl: String)
-    func failure()
+    func failure(error: ServiceError)
 }
 
 // MARK: - ExternalDM
@@ -49,13 +50,13 @@ protocol MoviesListExternalInputDMInterface {
     var interactor: MoviesListExternalOutputDMInterface? { get set }
     // Interactor -> External Data Manager
     func getData(searchText: String)
-    func getImagesaseUrl()
+    func getImagesBaseUrl()
 }
 
 protocol MoviesListExternalOutputDMInterface: class {
     // External Data Manager -> Interactor
     func success(response: MovieListServiceResponse, imageUrl: String)
-    func failure()
+    func failure(error: ServiceError)
 }
 
 // MARK: - LocalDM
@@ -82,5 +83,6 @@ protocol MoviesListWireframeInterface {
     func noResultsInitialState()
     func noResultsErrorView()
     func noResultsView()
+    func noResultsViewHidden(hidden: Bool)
 }
 
